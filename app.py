@@ -8,11 +8,10 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-import sqlite3
-from flask import Flask, jsonify, request, url_for
+from flask import Flask, jsonify, request
 
 # setup the database
-engine = create_engine('sqlite:///hawaii.sqlite')
+engine = create_engine("sqlite:///hawaii.sqlite")
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
@@ -67,18 +66,17 @@ def temp_monthly():
     return jsonify(temps=temps)
 
 @app.route("/api/v1.0/temp/<start>")
-def stats1(start=None):
-    session = Session(engine)
-    sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
-    results = session.query(*sel).filter(Measurement.date >= start).all()
-    temps = list(np.ravel(results))
-    session.close()
-    return jsonify(temps)
-
 @app.route("/api/v1.0/temp/<start>/<end>")
-def stats2(start=None, end=None):
+def stats(start=None, end=None):
     session = Session(engine)
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+    
+    if not end:
+        results = session.query(*sel).filter(Measurement.date >= start).all()
+        temps = list(np.ravel(results))
+        session.close()
+        return jsonify(temps)
+    
     results = session.query(*sel).filter(Measurement.date >= start).filter(Measurement.date <= end).all()
     temps = list(np.ravel(results))
     session.close()
