@@ -37,7 +37,7 @@ This page displays the temperature observation data:
 ![Flask Temperature Observations Page](Resources/flask_tobs.png)
 
 #### Temperature Exploration Page
-This page displays the Minimum, Maximum, and Average temperature for a single date, or a range of dates.
+This page displays the Minimum, Average, and Maximum temperatures for a single date, or a range of dates.
 
 Data displayed for a single date:
 
