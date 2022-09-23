@@ -41,11 +41,11 @@ This page displays the Minimum, Maximum, and Average temperature for a single da
 
 Data displayed for a single date:
 
-![Flask Temperature Exploration - single date](Resources/flask_start.png)
+![Flask Temperature Exploration - single date](Resources/flask_temp_start.png)
 
 Data displayed for a date range:
 
-![Flask Temperature Exploration - Date Range](Resources/flask_start-end.png)
+![Flask Temperature Exploration - Date Range](Resources/flask_temp_start-end.png)
 
 
 ## Results
@@ -77,3 +77,4 @@ The following recommendations are provided to ensure complete and accurate infor
 
 ### Longer-Term
 * Additional weather data should be collected during "December" to ensure there is equal or nearly-equal amounts of data for the seasonal comparisons.
+https://github.com/AndrewZinc/Surfs_up/blob/main/Resources/flask_start.png
