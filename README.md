@@ -28,7 +28,7 @@ This page displays the precipitation data:
 #### Stations Page
 This page displays the weather stations that are reporting the weather conditions:
 
-[Flask Stations Page](Resources/flask_stations.png)
+![Flask Stations Page](Resources/flask_stations.png)
 
 
 #### Temperature Observations Page
@@ -75,13 +75,13 @@ Build and run additional queries to provide more weather information for June an
 
 *	```june_temp_precip = session.query(Measurement.tobs, Measurement.prcp).filter(Measurement.date.like('%-06-%'))```
 
-This collects data which plots as:
+This collects correlated Temperature and Precipitation data which plots as:
 
 ![June Temperatures & Precipitation](Resources/june_tp.png)
 
 *	```dec_temp_precip = session.query(Measurement.tobs, Measurement.prcp).filter(Measurement.date.like('%-12-%'))```
 
-This collects data which plots as:
+This collects correlated Temperature and Precipitation data which plots as:
 
 ![December Temperatures & Precipitation](Resources/dec_tp.png)
 
@@ -90,6 +90,6 @@ This collects data which plots as:
 * Additional weather data should be collected during "December" to ensure there is equal or nearly-equal amounts of data for the seasonal comparisons.
 
 * Collect additional types of weather data:
-		* % Cloudiness
-		* Wind Speed
-		* Humidity
+	* % Cloudiness
+	* Wind Speed
+	* Humidity
