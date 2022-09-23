@@ -71,10 +71,25 @@ This is useful information, but more weather data analysis is recommended.
 The following recommendations are provided to ensure complete and accurate information is available to facilitate the investor decision-making process.
 
 ### Short-Term
+Build and run additional queries to provide more weather information for June and December.
 
+*	```june_temp_precip = session.query(Measurement.tobs, Measurement.prcp).filter(Measurement.date.like('%-06-%'))```
 
+This collects data which plots as:
+
+![June Temperatures & Precipitation](Resources/june_tp.png)
+
+*	```dec_temp_precip = session.query(Measurement.tobs, Measurement.prcp).filter(Measurement.date.like('%-12-%'))```
+
+This collects data which plots as:
+
+![December Temperatures & Precipitation](Resources/dec_tp.png)
 
 
 ### Longer-Term
 * Additional weather data should be collected during "December" to ensure there is equal or nearly-equal amounts of data for the seasonal comparisons.
-https://github.com/AndrewZinc/Surfs_up/blob/main/Resources/flask_start.png
+
+* Collect additional types of weather data:
+		* % Cloudiness
+		* Wind Speed
+		* Humidity
